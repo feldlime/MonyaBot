@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "monya_bot"
+version = "0.0.1"
+description = ""
+authors = ["Emiliy Feldman <feldlime@yandex.ru>"]
+maintainers = ["Emiliy Feldman <feldlime@yandex.ru>"]
+readme = "README.md"
+packages = [
+    { include = "monya" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pydantic = "^1.8.2"
+orjson = "^3.5.3"
+alembic = "^1.6.5"
+asyncpg = "^0.23.0"
+psycopg2-binary = "^2.9.1"
+aiogram = "^2.14.3"
+uvloop = "^0.15.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+coverage = "^5.5"
+mypy = "^0.812"
+isort = "^5.8.0"
+bandit = "^1.7.0"
+flake8 = "^3.9.2"
+pylint = "^2.8.3"
+
+[build-system]
+requires = ["poetry>=1.0.5"]
+build-backend = "poetry.masonry.api"
