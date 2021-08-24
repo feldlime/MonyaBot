@@ -285,7 +285,8 @@ async def get_statuses_cb_h(
 
     variant = callback_data["variant"]
     if variant == "divide":
-        rest = sum(statuses.values()) / len(statuses)
+        users = await db_service.get_chat_users(query.message.chat.id)
+        rest = sum(statuses.values()) / len(users)
         statuses = {name: amount - rest for name, amount in statuses.items()}
         reply = "Разделив остаток поровну, получим:\n"
     else:
